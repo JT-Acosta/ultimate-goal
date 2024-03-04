@@ -13,7 +13,7 @@ export const PackagesContainer = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        height: 1300px;
+        height: 2000px;
     }
 `;
 
@@ -59,6 +59,7 @@ export const PackagesIcon = styled.img`
     height: 160px;
     width: 160px;
     margin-bottom: 10px;
+    border-radius: 10px;
 `;
 
 export const PackagesH1 = styled.h1`
