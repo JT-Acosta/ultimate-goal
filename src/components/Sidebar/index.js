@@ -1,7 +1,11 @@
-import React from 'react'
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRoute } from './SidebarElements'
+import React from 'react';
+import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRoute } from './SidebarElements';
+import { useCart } from '../Context/CartContext';
 
 const Sidebar = ({ isOpen, toggle }) => {
+  const { cartCount } = useCart();
+
+
   return (
     <SidebarContainer isOpen={ isOpen } onClick={ toggle }>
       <Icon onClick= { toggle }>

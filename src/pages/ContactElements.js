@@ -1,22 +1,24 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const ContactLogo =styled.div`
+export const ContactLogo =styled(Link)`
   position: absolute;  
   top: 20px;
   left: 20px;
-  font-size: 1.5rem; /* Adjust font size as needed */
-  color: #ffffff; /* White text color */
-  cursor: pointer; /* Change cursor to pointer on hover for better UX */
+  font-size: 1.5rem; 
+  color: #ffffff; 
+  cursor: pointer; 
   justify-self: flex-start;
   margin-left: 24px; 
   font-weight: bold; 
+  text-decoration: none;
 `;
 
 export const ContactForm = styled.div`
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full height of the viewport */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
     background-color: #01bf71;
 
     form {
@@ -28,9 +30,9 @@ export const ContactForm = styled.div`
         input,
         textarea {
             width: 100%;
-            height: 35px; /* Adjust height as needed */
+            height: 35px; 
             padding: 7px;
-            margin-bottom: 1rem; /* Add margin between inputs */
+            margin-bottom: 1rem; 
             outline: none;
             border-radius: 5px;
             border: 1px solid rgb(220, 220, 220);
@@ -41,8 +43,8 @@ export const ContactForm = styled.div`
         }
 
         textarea {
-            min-height: 100px; /* Set minimum height */
-            resize: vertical; /* Allow vertical resizing */
+            min-height: 100px; 
+            resize: vertical; 
         }
 
         label {
@@ -63,4 +65,17 @@ export const ContactForm = styled.div`
             }
         }
     }
+`;
+
+export const Notification = styled.div`
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px 40px;
+    background-color: #010606;
+    color: #01bf71;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999; 
+    display: ${props => props.visible ? 'block' : 'none'};
 `;

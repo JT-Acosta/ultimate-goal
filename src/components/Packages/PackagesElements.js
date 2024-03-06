@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PackagesContainer = styled.div`
-    height: auto;
+    height: 860px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@ export const PackagesContainer = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        height: 1300px;
+        height: auto;
     }
 `;
 
@@ -81,4 +81,9 @@ export const PackagesH2 = styled.h2`
 export const PackagesP = styled.p`
     font-size: 1rem;
     text-align: center;
+`;
+
+export const PackagesBtnWrap = styled.div`
+margin-top: 20px;
+margin-bottom: 16px;
 `;
