@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '../ButtonElements';
+import { Button, ContactBtn } from '../ButtonElements';
 import { 
     InfoContainer, 
     InfoWrapper, 
@@ -23,7 +23,7 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, dark
   const handleVideoClick = () => {
       setIsPlaying(!isPlaying);
   };
-
+  console.log('ID:', id);
   return (
       <>
           <InfoContainer lightBg={lightBg} id={id}>
@@ -35,19 +35,30 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, dark
                               <Heading lightText={lightText}>{headline}</Heading>
                               <Subtitle darkText={darkText}>{description}</Subtitle>
                               <BtnWrap>
-                                  <Button
-                                      to='packages'
-                                      smooth={true}
-                                      duration={500}
-                                      spy={true}
-                                      exact='true'
-                                      offset={-80}
-                                      primary={primary ? 1 : 0}
-                                      dark={dark ? 1 : 0}
-                                      dark2={dark2 ? 1 : 0}
-                                  >
-                                      {buttonLabel}
-                                  </Button>
+                              {id === 'contact' ? (
+                                      <ContactBtn
+                                          to='/Contact'
+                                          primary={primary ? 1 : 0}
+                                          dark={dark ? 1 : 0}
+                                          dark2={dark2 ? 1 : 0}
+                                      >
+                                          {buttonLabel}
+                                      </ContactBtn>
+                                  ) : (
+                                      <Button
+                                          to='packages'
+                                          smooth={true}
+                                          duration={500}
+                                          spy={true}
+                                          exact='true'
+                                          offset={-80}
+                                          primary={primary ? 1 : 0}
+                                          dark={dark ? 1 : 0}
+                                          dark2={dark2 ? 1 : 0}
+                                      >
+                                          {buttonLabel}
+                                      </Button>
+                                  )}
                               </BtnWrap>
                           </TextWrapper>
                       </Column1>
@@ -57,7 +68,7 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, dark
                                     <PreviewImg src={previewImg} alt={alt} />
                                 )}
                                 {videoSrc && isPlaying && (
-                                    <Video autoPlay loop controls style={{ width: '100%', height: 'auto' }} volume={ 0.25 } onClick={handleVideoClick}>
+                                    <Video autoPlay loop controls style={{ width: '100%', height: 'auto' }} volume={ 0.25 } onClick={ handleVideoClick }>
                                         <source src={videoSrc} type="video/mp4" />
                                         Your browser does not support the video tag.
                                     </Video>

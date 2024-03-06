@@ -5,7 +5,8 @@ import Icon2 from '../../images/img-4.jpeg';
 import Icon3 from '../../images/img-5.jpeg';
 import Icon4 from '../../images/img-6.jpg';
 import Icon5 from '../../images/img-7.jpg'
-import { PackagesContainer, PackagesH1, PackagesWrapper, PackagesCard, PackagesIcon, PackagesH2, PackagesP } from './PackagesElements';
+import { PackagesContainer, PackagesH1, PackagesWrapper, PackagesCard, PackagesIcon, PackagesH2, PackagesP, PackagesBtnWrap } from './PackagesElements';
+import { Button } from '../ButtonElements';
 
 const Packages = () => {
 
@@ -64,6 +65,12 @@ const Packages = () => {
             </PackagesCard>
         ))}
       </PackagesWrapper>
+      <PackagesBtnWrap>
+        <Button 
+        primary='true'
+        dark='true'
+        >Schedule Now</Button>
+      </PackagesBtnWrap>
     </PackagesContainer>
   );
 }
